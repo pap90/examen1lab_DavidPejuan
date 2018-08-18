@@ -19,6 +19,7 @@ public class Examen1_DavidPejuan {
      */
     public static void main(String[] args) {
         ArrayList<alumno> a = new ArrayList();
+        ArrayList<tutoria> t=new ArrayList();
        
         alumno n = new alumno();
         int resp = 0;
@@ -413,7 +414,15 @@ public class Examen1_DavidPejuan {
                     }
                     break;
                 case 3:
-                    
+                    System.out.println("Ingrese clase");
+                    String clase=sc.next();
+                    System.out.println("Ingrese tema");
+                    String tema=sc.next();
+                    for (int i = 0; i < a.size(); i++) {
+                        if (a.get(i) instanceof normales) {
+                            ((normales)a.get(i)).getEp().add(new examen(clase, 0, tema, 0));
+                        }
+                    }
                     break;
             }
 
